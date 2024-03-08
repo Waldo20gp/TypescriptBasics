@@ -1,0 +1,29 @@
+// import { name, templateString } from './Bases/tipos.ts'
+// import { bulbasaur, pokemons} from './Bases/objects.ts'
+import './style.css'
+import typescriptLogo from './typescript.svg'
+import viteLogo from '/vite.svg'
+import { setupCounter } from './counter.ts'
+// import { charmander } from './Bases/injeccion.ts'
+import { charmander } from './Bases/decoradores2.ts' 
+
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <div>
+    <a href="https://vitejs.dev" target="_blank">
+      <img src="${viteLogo}" class="logo" alt="Vite logo" />
+    </a>
+    <h1>How's that pokemon: ${ charmander.name }</h1>
+    <a href="https://www.typescriptlang.org/" target="_blank">
+      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
+    </a>
+    <h1>Vite + TypeScript</h1>
+    <div class="card">
+      <button id="counter" type="button"></button>
+    </div>
+    <p class="read-the-docs">
+      Click on the Vite and TypeScript logos to learn more
+    </p>
+  </div>
+`
+//<h1>How's that pokemon: ${ pokemons.join(',') }</h1>
+setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
